@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -6,8 +6,8 @@ import {
   StyleSheet,
   Dimensions,
   ScrollView,
-  Button
-} from 'react-native';
+  Button,
+} from "react-native";
 import {
   validateConsistency,
   validateFullName,
@@ -20,37 +20,35 @@ import {
   validateFatherName,
   validateEmail,
   validatePhoneNumber,
-  validateUserType
-} from './Validations'
-import {Picker} from '@react-native-picker/picker';
+  validateUserType,
+} from "./Validations";
+import { Picker } from "@react-native-picker/picker";
 const RegistrationForm = () => {
-  const [consistency, setConsistency] = useState('');
-  const [fullName, setfulName] = useState('');
-  const [village,setVillage]=useState('');
-  const [mandal,setMandal]=useState('');
-  const [district,setDistrict]=useState('');
-  const [aadharNumber,setAadharNumber]=useState('');
-  const[fatherName,setfatherName]=useState('');
-  const [email, setEmail] = useState('');
-  const [occupation,setOccupation]=useState('');
-  const [contribution, setContribution] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const[remarks,setRemarks]=useState('');
+  const [consistency, setConsistency] = useState("");
+  const [fullName, setfulName] = useState("");
+  const [village, setVillage] = useState("");
+  const [mandal, setMandal] = useState("");
+  const [district, setDistrict] = useState("");
+  const [aadharNumber, setAadharNumber] = useState("");
+  const [fatherName, setfatherName] = useState("");
+  const [email, setEmail] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [contribution, setContribution] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [remarks, setRemarks] = useState("");
   const [selectedValue, setSelectedValue] = useState();
   const [selectedValueError, setSelectedValueError] = useState();
-  const [consistencyError, setConsistencyError] = useState('');
-  const [fullNameError, setfulNameError] = useState('');
-  const [villageError,setVillageError]=useState('');
-  const [mandalError,setMandalError]=useState('');
-  const [districtError,setDistrictError]=useState('');                   
-  const [aadharNumberError,setAadharNumberError]=useState('');
-  const[fatherNameError,setfatherNameError]=useState('');
-  const [emailError, setEmailError] = useState('');
-  const [occupationError,setOccupationError]=useState('');
-  const [contributionError, setContributionError] = useState('');
-  const [phoneNumberError, setPhoneNumberError] = useState('');
-
-
+  const [consistencyError, setConsistencyError] = useState("");
+  const [fullNameError, setfulNameError] = useState("");
+  const [villageError, setVillageError] = useState("");
+  const [mandalError, setMandalError] = useState("");
+  const [districtError, setDistrictError] = useState("");
+  const [aadharNumberError, setAadharNumberError] = useState("");
+  const [fatherNameError, setfatherNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [occupationError, setOccupationError] = useState("");
+  const [contributionError, setContributionError] = useState("");
+  const [phoneNumberError, setPhoneNumberError] = useState("");
 
   const handleSubmit = () => {
     // Perform form validation
@@ -65,8 +63,7 @@ const RegistrationForm = () => {
     const fatherNameError = validateFatherName(fatherName);
     const occupationError = validateOccupation(occupation);
     const contributionError = validateContribution(contribution);
-    const userTypeError=validateUserType(selectedValue)
-
+    const userTypeError = validateUserType(selectedValue);
 
     setConsistencyError(consistencyError);
     setfulNameError(fullNameError);
@@ -79,75 +76,83 @@ const RegistrationForm = () => {
     setfatherNameError(fatherNameError);
     setOccupationError(occupationError);
     setContributionError(contributionError);
-    setSelectedValueError(userTypeError)
+    setSelectedValueError(userTypeError);
 
-    
-
-    if (!consistencyError && !fullNameError && !emailError && !phoneNumberError && !villageError && mandalError && districtError
-         && aadharNumberError && fatherNameError && occupationError && contributionError && userTypeError) {
+    if (
+      !consistencyError &&
+      !fullNameError &&
+      !emailError &&
+      !phoneNumberError &&
+      !villageError &&
+      mandalError &&
+      districtError &&
+      aadharNumberError &&
+      fatherNameError &&
+      occupationError &&
+      contributionError &&
+      userTypeError
+    ) {
       // Perform registration logic here
       // Reset form fields
-      setConsistency('');
-      setfulName('');
-      setEmail('');
-      setPhoneNumber('');
-      setVillage('');
-      setMandal('');
-      setDistrict('');
-      setAadharNumber('');
-      setfatherName('');
-      setOccupation('');
-      setContribution('');
-      setSelectedValue('')
+      setConsistency("");
+      setfulName("");
+      setEmail("");
+      setPhoneNumber("");
+      setVillage("");
+      setMandal("");
+      setDistrict("");
+      setAadharNumber("");
+      setfatherName("");
+      setOccupation("");
+      setContribution("");
+      setSelectedValue("");
     }
   };
 
-  
-
   const handleReset = () => {
-    setConsistency('');
-    setfulName('');
-    setVillage('');
-    setMandal('');
-    setDistrict('');
-    setAadharNumber('');
-    setfatherName('');
-    setEmail('');
-    setOccupation('');
-    setContribution('');
-    setPhoneNumber('');
-    setRemarks('');
-    setSelectedValue('');
-    setConsistencyError('');
-    setfulNameError('');
-    setEmailError('');
-    setPhoneNumberError('');
-    setVillageError('');
-    setMandalError('');
-    setDistrictError('');
-    setAadharNumberError('');
-    setfatherNameError('');
-    setOccupationError('');
-    setContributionError('');
-    setSelectedValueError('');
+    setConsistency("");
+    setfulName("");
+    setVillage("");
+    setMandal("");
+    setDistrict("");
+    setAadharNumber("");
+    setfatherName("");
+    setEmail("");
+    setOccupation("");
+    setContribution("");
+    setPhoneNumber("");
+    setRemarks("");
+    setSelectedValue("");
+    setConsistencyError("");
+    setfulNameError("");
+    setEmailError("");
+    setPhoneNumberError("");
+    setVillageError("");
+    setMandalError("");
+    setDistrictError("");
+    setAadharNumberError("");
+    setfatherNameError("");
+    setOccupationError("");
+    setContributionError("");
+    setSelectedValueError("");
   };
-
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.label}>Register</Text>
 
       <Picker
-  selectedValue={selectedValue}
-  onValueChange={(itemValue, itemIndex) =>
-    setSelectedValue(itemValue)
-  }>
-    <Picker.Item label="Select UserType" value="Select UserType" />
-  <Picker.Item label="NRI" value="nri" />
-  <Picker.Item label="NRV" value="nrv" />
-</Picker>
-{selectedValueError ? <Text style={styles.error}>{selectedValueError}</Text> : null}
-<Text style={styles.label}>Consistency</Text>
+        selectedValue={selectedValue}
+        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="Select UserType" value="Select UserType" />
+        <Picker.Item label="NRI" value="nri" />
+        <Picker.Item label="NRV" value="nrv" />
+      </Picker>
+      {selectedValueError ? (
+        <Text style={styles.error}>{selectedValueError}</Text>
+      ) : null}
+      <Text style={styles.label}>Consistency</Text>
       <TextInput
         style={styles.input}
         value={consistency}
@@ -156,8 +161,10 @@ const RegistrationForm = () => {
         placeholderTextColor="black"
         keyboardType="default"
       />
-      {consistencyError ? <Text style={styles.error}>{consistencyError}</Text> : null}
-       <Text style={styles.label}>Full Name</Text>
+      {consistencyError ? (
+        <Text style={styles.error}>{consistencyError}</Text>
+      ) : null}
+      <Text style={styles.label}>Full Name</Text>
       <TextInput
         style={styles.input}
         value={fullName}
@@ -177,7 +184,7 @@ const RegistrationForm = () => {
         keyboardType="default"
       />
       {villageError ? <Text style={styles.error}>{villageError}</Text> : null}
-       <Text style={styles.label}>Mandal</Text>
+      <Text style={styles.label}>Mandal</Text>
       <TextInput
         style={styles.input}
         value={mandal}
@@ -187,7 +194,7 @@ const RegistrationForm = () => {
         keyboardType="default"
       />
       {mandalError ? <Text style={styles.error}>{mandalError}</Text> : null}
-       <Text style={styles.label}>District</Text>
+      <Text style={styles.label}>District</Text>
       <TextInput
         style={styles.input}
         value={district}
@@ -197,7 +204,7 @@ const RegistrationForm = () => {
         keyboardType="default"
       />
       {districtError ? <Text style={styles.error}>{districtError}</Text> : null}
-       <Text style={styles.label}>Occupation</Text>
+      <Text style={styles.label}>Occupation</Text>
       <TextInput
         style={styles.input}
         value={occupation}
@@ -206,8 +213,10 @@ const RegistrationForm = () => {
         placeholderTextColor="black"
         keyboardType="default"
       />
-      {occupationError ? <Text style={styles.error}>{occupationError}</Text> : null}
-       <Text style={styles.label}>Mode of Contribution</Text>
+      {occupationError ? (
+        <Text style={styles.error}>{occupationError}</Text>
+      ) : null}
+      <Text style={styles.label}>Mode of Contribution</Text>
       <TextInput
         style={styles.input}
         value={contribution}
@@ -216,7 +225,9 @@ const RegistrationForm = () => {
         placeholderTextColor="black"
         keyboardType="default"
       />
-      {contributionError ? <Text style={styles.error}>{contributionError}</Text> : null}
+      {contributionError ? (
+        <Text style={styles.error}>{contributionError}</Text>
+      ) : null}
       <Text style={styles.label}>Aadhar Number</Text>
       <TextInput
         style={styles.input}
@@ -227,7 +238,9 @@ const RegistrationForm = () => {
         keyboardType="phone-pad"
         maxLength={12}
       />
-      {aadharNumberError ? <Text style={styles.error}>{aadharNumberError}</Text> : null}
+      {aadharNumberError ? (
+        <Text style={styles.error}>{aadharNumberError}</Text>
+      ) : null}
       <Text style={styles.label}>Father Name</Text>
       <TextInput
         style={styles.input}
@@ -237,18 +250,24 @@ const RegistrationForm = () => {
         placeholderTextColor="black"
         keyboardType="default"
       />
-      {fatherNameError ? <Text style={styles.error}>{fatherNameError}</Text> : null}
-           <Text style={styles.label}>Phone Number</Text>
+      {fatherNameError ? (
+        <Text style={styles.error}>{fatherNameError}</Text>
+      ) : null}
+      <Text style={styles.label}>Phone Number</Text>
       <TextInput
         style={styles.input}
         value={phoneNumber}
-        onChangeText={(text) => setPhoneNumber(text.replace(/[^0-9]/g, '').slice(0, 10))}
+        onChangeText={(text) =>
+          setPhoneNumber(text.replace(/[^0-9]/g, "").slice(0, 10))
+        }
         placeholder="Enter phone number"
         placeholderTextColor="black"
         keyboardType="phone-pad"
         maxLength={10}
       />
-     {phoneNumberError ? <Text style={styles.error}>{phoneNumberError}</Text> : null}
+      {phoneNumberError ? (
+        <Text style={styles.error}>{phoneNumberError}</Text>
+      ) : null}
 
       <Text style={styles.label}>Email</Text>
       <TextInput
@@ -260,7 +279,6 @@ const RegistrationForm = () => {
         keyboardType="email-address"
       />
       {emailError ? <Text style={styles.error}>{emailError}</Text> : null}
-    
 
       <Text style={styles.label}>Remarks</Text>
       <TextInput
@@ -269,8 +287,7 @@ const RegistrationForm = () => {
         onChangeText={setRemarks}
         placeholder="Enter any remarks"
         placeholderTextColor="black"
-        keyboardType='default'
-        
+        keyboardType="default"
       />
 
       <View style={styles.buttonContainer}>
@@ -283,13 +300,12 @@ const RegistrationForm = () => {
         <Text style={styles.loginText}>Already have an account. </Text>
         <Text style={[styles.loginText, styles.highlightedText]}>Log in</Text>
       </View>
-      
     </ScrollView>
   );
 };
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: {
@@ -298,8 +314,8 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   logoContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginBottom: 10,
   },
   logo: {
@@ -307,48 +323,48 @@ const styles = StyleSheet.create({
     height: windowHeight * 0.2,
   },
   label: {
-    alignSelf: 'flex-start',
-    fontWeight: 'bold',
+    alignSelf: "flex-start",
+    fontWeight: "bold",
     marginBottom: 5,
   },
   input: {
-    width: '100%',
+    width: "100%",
     height: 40,
-    borderColor: 'gray',
+    borderColor: "gray",
     borderWidth: 1,
     borderRadius: 5,
     marginBottom: 10,
     paddingHorizontal: 10,
-    fontWeight:'bold'
+    fontWeight: "bold",
   },
   otpContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 10,
   },
   otpInput: {
-    width: '70%',
+    width: "70%",
   },
   getOTPButton: {
-    backgroundColor: 'green',
+    backgroundColor: "green",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   buttonText: {
-    color: 'white',
+    color: "white",
   },
   resendText: {
-    color: 'blue',
-    textDecorationLine: 'none',
-    fontWeight:'bold',
-    alignSelf: 'flex-end',
+    color: "blue",
+    textDecorationLine: "none",
+    fontWeight: "bold",
+    alignSelf: "flex-end",
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     marginTop: 20,
     marginBottom: 10,
   },
@@ -356,18 +372,18 @@ const styles = StyleSheet.create({
     width: 10,
   },
   loginContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
   },
   loginText: {
     fontSize: 16,
   },
   highlightedText: {
-    fontWeight: 'bold',
-    textDecorationLine: 'none',
+    fontWeight: "bold",
+    textDecorationLine: "none",
   },
   error: {
-    color: 'red',
+    color: "red",
     marginBottom: 10,
   },
 });
