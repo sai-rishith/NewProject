@@ -1,32 +1,32 @@
 export const validateFirstName = (firstName) => {
   if (firstName.trim() === "") {
-    return "First name is required.";
+    return "first name is required.";
   }
   return "";
 };
 export const validateUserName = (userName) => {
   if (userName.trim() === "") {
-    return "User name is required. Enter your email-id";
+    return "user name is required. Enter your email-id";
   }
   return "";
 };
 
 export const validateLastName = (lastName) => {
   if (lastName.trim() === "") {
-    return "Last name is required.";
+    return "last name is required.";
   }
   return "";
 };
 
 export const validateEmail = (email) => {
   if (email.trim() === "") {
-    return "Email is required.";
+    return "email is required.";
   }
 
   // Email validation using regular expression
   const emailPattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
   if (!emailPattern.test(email)) {
-    return "Invalid email format.";
+    return "invalid email format.";
   }
 
   return "";
@@ -34,37 +34,37 @@ export const validateEmail = (email) => {
 
 export const validatePhoneNumber = (phoneNumber) => {
   if (phoneNumber === "") {
-    return "Phone Number is required.";
+    return "phone number is required.";
   } else if (phoneNumber.length !== 10) {
-    return "Phone Number must be exactly 10 digits.";
+    return "phone number must be exactly 10 digits.";
   }
   return "";
 };
 
 export const validateOTP = (otp) => {
   if (otp === "") {
-    return "OTP is required.";
+    return "otp is required.";
   } else if (otp.length !== 6) {
-    return "OTP must be exactly 6 digits.";
+    return "otp must be exactly 6 digits.";
   } else if (!/^\d+$/.test(otp)) {
-    return "OTP must contain only digits.";
+    return "otp must contain only digits.";
   }
   return "";
 };
 
 export const validatePassword = (password) => {
   if (password.trim() === "") {
-    return "Password is required.";
+    return "password is required.";
   } else if (password.length < 6) {
-    return "Password must be at least 6 characters long.";
+    return "password must be at least 6 characters long.";
   }
   return "";
 };
 export const validateConfirmPassword = (password, confirmPassword) => {
   if (confirmPassword.trim() === "") {
-    return "Confirm password is required.";
+    return "confirm password is required.";
   } else if (password !== confirmPassword) {
-    return "Passwords do not match.";
+    return "passwords do not match.";
   }
   return "";
 };
@@ -121,7 +121,7 @@ export const validateAadharNumber = (aadharNumber) => {
   const isValid = aadharRegex.test(aadharNumber);
 
   if (!isValid) {
-    return "Invalid Aadhar number";
+    return "invalid aadhar number";
   }
 
   return null;
